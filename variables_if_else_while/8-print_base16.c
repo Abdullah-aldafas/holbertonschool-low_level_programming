@@ -11,9 +11,13 @@ int main (void)
 	char x;
 
 	for (d = '0'; d <='9'; d++)
+	{
 		putchar('d');
+	}
 	for (x = 'a'; x <='f'; x++)
+	{
 		putchar('x');
+	}
 
 	putchar('\n');
 
