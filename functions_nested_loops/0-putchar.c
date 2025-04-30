@@ -1,21 +1,18 @@
 #include <stdio.h>
-
+#include "main.h"
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * main - Check description
+ * Description: It prints the word Holberton, followed by a new line.
+ * Return: 0.
  */
 int main(void)
 {
-    putchar('_');
-    putchar('p');
-    putchar('u');
-    putchar('t');
-    putchar('c');
-    putchar('h');
-    putchar('a');
-    putchar('r');
-    putchar('\n');
+	char word[8] = "_putchar";
+	int i;
 
-    return 0;
+	for (i = 0; i < 8; i++)
+		_putchar(word[i]);
+	_putchar('\n');
+
+	return (0);
 }
