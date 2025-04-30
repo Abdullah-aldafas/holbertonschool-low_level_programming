@@ -2,7 +2,7 @@
 /**
  * main -  program that prints all the numbers of base 16 in lowercase,
  *
- * Return (0)
+ * Return: Always 0 (Success)
  *
  */
 int main (void)
@@ -12,11 +12,11 @@ int main (void)
 
 	for (d = '0'; d <='9'; d++)
 	{
-		putchar('d');
+		putchar(d);
 	}
 	for (x = 'a'; x <='f'; x++)
 	{
-		putchar('x');
+		putchar(x);
 	}
 
 	putchar('\n');
