@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * print_line - a function that draws a straight line in the terminal.
- * followed by a new line.
- * @n: An input integer
+ * swap_int -  a function that swaps the values of two integers.
+ * @a: An input integer
+ * @b: An input integer
  * Return: Always 0
  */
 void swap_int(int *a, int *b)
