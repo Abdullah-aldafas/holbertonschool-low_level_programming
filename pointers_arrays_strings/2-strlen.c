@@ -2,7 +2,7 @@
 #include "main.h"
 /**
  * _strlen -  a function that returns the length of a string.
- * @i: An input integer
+ * @s: An input integer
  * Return: Always 0
  */
 int _strlen(char *s)
@@ -13,5 +13,5 @@ int _strlen(char *s)
 	{
 	}
 
-	return i;
+	return (i);
 }
