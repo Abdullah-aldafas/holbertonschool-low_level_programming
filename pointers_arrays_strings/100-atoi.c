@@ -7,7 +7,8 @@
  */
 int _atoi(char *s)
 {
-	int sign = 1, result = 0;
+	int sign = 1;  
+unsigned int result = 0;
 	char found_digit = 0;
 
 
@@ -18,7 +19,7 @@ int _atoi(char *s)
 
 		if (*s >= '0' && *s <= '9')
 		{
-			result = result * 10 + (*s - '0');
+			result = result * 10 + *s - '0';
 			found_digit = 1;
 		}
 		else if (found_digit)
