@@ -11,14 +11,14 @@ int _atoi(char *s)
 	int found_digit = 0;
 
 
-	while (s[i] != '\0')
+	while (*s != '\0')
 	{
-		if (s[i] == '-')
+		if (*s  == '-')
 			sign *= -1;
 
-		else if (s[i] >= '0' && s[i] <= '9')
+		 if (*s >= '0' && *s <= '9')
 		{
-			result = result * 10 + (s[i] - '0');
+			result = result * 10 + (*s - '0');
 			found_digit = 1;
 		}
 		else if (found_digit)
