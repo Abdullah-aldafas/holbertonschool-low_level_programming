@@ -7,8 +7,6 @@
  * @n: an input integer
  * Return: A pointer to the resulting string
  */
-#include <stdio.h>
-#include "main.h"
 
 char *_strncat(char *dest, char *src, int n)
 {
