@@ -13,7 +13,7 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i, j;
+	int i, j, x, z;
 	char *temp, *add;
 	dog_t *d = malloc(sizeof(dog_t));
 
@@ -31,7 +31,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(d);
 		return (NULL);
 	}
-	strcpy(temp, name);
+	for (x = 0; x <= i; x++)
+		temp[x] = name[x];
 	d->name = temp;
 	d->age = age;
 	add = malloc(j + 1);
@@ -41,7 +42,8 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(temp);
 		return (NULL);
 	}
-	strcpy(add, owner);
+	for (z = 0; z <= j; z++)
+		add[z] = owner[z];
 	d->owner = add;
 	return (d);
 }
