@@ -15,6 +15,7 @@ char *argstostr(int ac, char **av)
 {
 	int i, j, z, pos = 0;
 	int total = 0;
+	char *temp;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
@@ -27,7 +28,7 @@ char *argstostr(int ac, char **av)
 		total++;
 	}
 	total++;
-	char *temp = malloc(total * sizeof(char));
+	temp = malloc(total * sizeof(char));
 
 	if (temp == NULL)
 		return (NULL);
