@@ -28,14 +28,10 @@ int help(char *s, int start, int end)
  */
 int is_palindrome(char *s)
 {
-	int end;
+	int end = _strlen(s);
 
 	if (*s == '\0')
 		return (1);
-
-	for (end = 0; s[end] != '\0'; end++)
-	{
-	}
 
 	return (help(s, 0, end - 1));
 }
