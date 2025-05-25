@@ -20,7 +20,7 @@ int help(char *s, int start, int end)
 	return (help(s, start + 1, end - 1));
 }
 
-int _starlen(char *s)
+int _strlen(char *s)
 {
 	if (*s == '\0')
 		return (0);
@@ -34,7 +34,7 @@ int _starlen(char *s)
  */
 int is_palindrome(char *s)
 {
-	int end = strlen(s);
+	int end = _strlen(s);
 
 	if (*s == '\0')
 		return (1);
