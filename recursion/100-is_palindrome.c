@@ -19,7 +19,12 @@ int help(char *s, int start, int end)
 
 	return (help(s, start + 1, end - 1));
 }
-
+/**
+ * _strlen - Calculates the length of a string using recursion
+ * @s: the string to measure
+ *
+ * Return: length of the string
+ */
 int _strlen(char *s)
 {
 	if (*s == '\0')
