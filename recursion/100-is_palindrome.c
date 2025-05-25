@@ -28,7 +28,7 @@ int help(char *s, int start, int end)
  */
 int is_palindrome(char *s)
 {
-	int end = _strlen(s);
+	int end = strlen(s);
 
 	if (*s == '\0')
 		return (1);
