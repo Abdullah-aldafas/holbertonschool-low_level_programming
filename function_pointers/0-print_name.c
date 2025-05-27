@@ -2,13 +2,12 @@
 #include "function_pointers.h"
 /**
  * print_name - a function that prints.
- * @n: An input integer
  * @name: An input pounter
+ * @f: function to print name
  * Return: Always 0
  */
 
 void print_name(char *name, void (*f)(char *))
 {
 	f(name);
-	printf("Hello, %s",name);
 }
