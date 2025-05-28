@@ -21,11 +21,11 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	a = atoi(argv[1]);
-	b = atoi(argv[3]); 
+	b = atoi(argv[3]);
 	if ((argv[2][0] == '/' || argv[2][0] == '%') && b == 0)
 	{
-		 printf("Error\n");
-		 exit(100);
+		printf("Error\n");
+		exit(100);
 	}
 	result = func(a, b);
 	printf("%d\n", result);
