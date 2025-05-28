@@ -3,10 +3,10 @@
 #include <string.h>
 #include "3-calc.h"
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
-	int a , b, result;
-	int (*func)(int,int);
+	int a, b, result;
+	int (*func)(int, int);
 
 	if (argc != 4)
 	{
@@ -20,14 +20,13 @@ int main (int argc, char *argv[])
 		printf("Error\n");
 		exit(99);
 	}
-	
 	 a = atoi(argv[1]);
 	 b = atoi(argv[3]);
 
 	 if ((argv[2][0] == '/' || argv[2][0] == '%') && b == 0)
 	 {
-		printf("Error\n");
-		exit(100);
+		 printf("Error\n");
+		 exit(100);
 	}
 	result = func(a, b);
 	printf("%d\n", result);
