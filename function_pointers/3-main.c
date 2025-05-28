@@ -12,13 +12,6 @@
 int main(int argc, char *argv[])
 {
 	int a, b, result;
-/**
- * get_op_func - Selects the correct function to perform the operation
- * @s: The operator passed as argument
- *
- * Return: Pointer to the function that corresponds to the operator,
- *         or NULL if the operator is invalid
- */
 	int (*func)(int, int);
 
 	if (argc != 4)
