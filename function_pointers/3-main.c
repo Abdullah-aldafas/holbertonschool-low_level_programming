@@ -2,10 +2,23 @@
 #include <stdlib.h>
 #include <string.h>
 #include "3-calc.h"
-
+/**
+ * main - Entry point for the calculator program
+ * @argc: Argument count
+ * @argv: Argument vector (array of arguments)
+ *
+ * Return: 0 on success, or exits with error status
+ */
 int main(int argc, char *argv[])
 {
 	int a, b, result;
+/**
+ * get_op_func - Selects the correct function to perform the operation
+ * @s: The operator passed as argument
+ *
+ * Return: Pointer to the function that corresponds to the operator,
+ *         or NULL if the operator is invalid
+ */
 	int (*func)(int, int);
 
 	if (argc != 4)
