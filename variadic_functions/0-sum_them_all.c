@@ -2,9 +2,9 @@
 #include <stdarg.h>
 #include "variadic_functions.h"
 /**
- * _strlen_recursion - a function that returns the length of a string.
- * @s: An input pounter
- * Return:  length of a string.
+ * sum_them_all - a function that returns the sum of all its parameters.
+ * @n:an unsigned integr
+ * Return:  total of number
  */
 
 int sum_them_all(const unsigned int n, ...)
@@ -18,7 +18,11 @@ int sum_them_all(const unsigned int n, ...)
 	}
 	va_list(args);
 	va_start(args, n);
-	
+
 	for (i = 0; i < n; i++)
 	{
-
+		total = total + va_arg(args, unsigned int);
+	}
+	va_end(args);
+	return (args);
+}
