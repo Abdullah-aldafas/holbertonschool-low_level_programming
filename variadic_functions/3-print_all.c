@@ -8,7 +8,7 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0;
+	int i = 0, x = 0;
 	va_list args;
 	char *str;
 	va_start(args, format);
@@ -34,8 +34,8 @@ void print_all(const char * const format, ...)
 
 		}
 		
-		if (format[i + 1] == 'c' || format[i + 1] == 'i' ||
-			format[i + 1] == 'f' || format[i + 1] == 's')
+		if ((format[i + 1] == 'c' || format[i + 1] == 'i' ||
+			format[i + 1] == 'f' || format[i + 1] == 's') && x++)
 		printf(", ");
 		i++;
 	}
