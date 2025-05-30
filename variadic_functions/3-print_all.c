@@ -13,7 +13,7 @@ void print_all(const char * const format, ...)
 	char *str;
 
 
-	 if (format[i] == '\0')
+	 if (format == NULL ||  format[0] == '\0')
                         return;
 
 	va_start(args, format);
