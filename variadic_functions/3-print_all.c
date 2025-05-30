@@ -29,7 +29,7 @@ void print_all(const char * const format, ...)
 				break;
 
 			case 's':
-			va_args(args, char *);
+			va_arg(args, char *);
 			printf("%s", str);
 				break;
 
