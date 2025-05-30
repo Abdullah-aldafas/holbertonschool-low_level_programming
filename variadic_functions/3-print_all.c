@@ -10,7 +10,7 @@ void print_all(const char * const format, ...)
 {
 	int i = 0;
 	va_list args;
-	char *str = str ? str : "(nil)";
+	char *str = va_arg(args, char *);
 
 	va_start(args, format);
 
@@ -30,7 +30,7 @@ void print_all(const char * const format, ...)
 
 			case 's':
 			va_arg(args, char *);
-			printf("%s", str);
+			printf("%s", str ? str : "(nil)");
 				break;
 
 		}
