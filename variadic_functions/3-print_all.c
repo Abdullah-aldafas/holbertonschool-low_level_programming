@@ -1,6 +1,7 @@
+#include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
-#include "variadic_functions.h"
+#include <stdlib.h>
 /**
  * print_all - a function that prints anything.
  * @format: An input pounter
@@ -13,8 +14,6 @@ void print_all(const char * const format, ...)
 	char *str;
 
 	va_start(args, format);
-
-
 	while (format == NULL)
 	{
 		printf("\n");
@@ -26,31 +25,24 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 				printf("%c", va_arg(args, int));
-						break;
+				break;
 			case 'i':
-			printf("%d", va_arg(args, int));
-					break;
+				printf("%d", va_arg(args, int));
+				break;
 			case 'f':
-			printf("%f", va_arg(args, double));
+				printf("%f", va_arg(args, double));
 				break;
 
 			case 's':
-			str = va_arg(args, char *);
-			printf("%s", str ? str : "(nil)");
-			break;
-
-			default:
-			i++;
-			continue;
-
-
+				str = va_arg(args, char *);
+				printf("%s", str ? str : "(nil)");
+				break;
 		}
-		if ((format[i + 1] == 'c' || format[i + 1] == 'i' ||
-		       	format[i + 1] == 'f' || format[i + 1] == 's'))
+		if ((format[i] == 'c' || format[i] == 'i' ||format[i] == 'f' || 
+					format[i] == 's') && format[(i + 1)] != '\0')
 			printf(", ");
 		i++;
 	}
 	va_end(args);
 	printf("\n");
-
 }
