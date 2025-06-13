@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
- * list_len - a function that returns the number of 
+ * list_len - a function that returns the number of
  * elements in a linked list_t list.
  * @h: An input pounter
  * Return:  the number of elements
