@@ -17,10 +17,10 @@ unsigned int _strlen(const char *s)
 }
 
 /**
- * add_node - a function that adds a new node at the beginning of a list_t list
+ * add_node_end - a function that adds a new node at the end of a list_t list
  * @str: An input pointer
  * @head: An input pointer to pointer
- * Return: the new node
+ * Return: the new node in end
  */
 
 list_t *add_node_end(list_t **head, const char *str)
@@ -45,7 +45,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	while (temp->next != NULL)
 		temp = temp->next;
 
-	temp ->next = add;
+	temp->next = add;
 
 	return (add);
 }
