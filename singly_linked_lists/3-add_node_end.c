@@ -26,6 +26,7 @@ unsigned int _strlen(const char *s)
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *add = malloc(sizeof(list_t));
+	list_t *temp;
 
 	if (add == NULL)
 		return (NULL);
@@ -40,7 +41,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (add);
 	}
 
-	list_t *temp = *head;
+	temp = *head;
 	while (temp->next != NULL)
 		temp = temp->next;
 
