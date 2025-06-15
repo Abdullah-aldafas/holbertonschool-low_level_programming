@@ -7,13 +7,13 @@
  * add_dnodeint_end - a function that adds a new node at the end
  * @head: An input pounter to pounter
  * @n: An input intger
- * Return:  adds a new node at the end 
+ * Return:  adds a new node at the end
  */
 
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *temp = *head;
-	dlistint_t *add = malloc (sizeof(dlistint_t));
+	dlistint_t *add = malloc(sizeof(dlistint_t));
 
 	if (add == NULL)
 	{
@@ -32,7 +32,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
 	while (temp->next != NULL)
 	{
-		 temp = temp->next;
+		temp = temp->next;
 	}
 
 	 add->prev = temp;
