@@ -6,7 +6,7 @@
 /**
  * add_dnodeint_end - a function that adds a new node at the end
  * @head: An input pounter to pounter
- * @head: An input intger
+ * @n: An input intger
  * Return:  adds a new node at the end 
  */
 
@@ -20,8 +20,8 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		return (NULL);
 	}
 
-	add->n =n;
-	add->next=NULL;
+	add->n = n;
+	add->next = NULL;
 	if (*head == NULL)
 	{
 		add->prev = NULL;
@@ -30,11 +30,13 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 	}
 
 
-	 while (temp->next != NULL)
+	while (temp->next != NULL)
+	{
 		 temp = temp->next;
+	}
 
 	 add->prev = temp;
 	 temp->next = add;
 
-	 return (add);
+	return (add);
 }
