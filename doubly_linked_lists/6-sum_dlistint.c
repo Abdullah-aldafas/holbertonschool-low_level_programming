@@ -20,7 +20,7 @@ int sum_dlistint(dlistint_t *head)
 
 	while (head != NULL)
 	{
-		result = head->n;
+		result += head->n;
 		head = head->next;
 	}
 	return (result);
