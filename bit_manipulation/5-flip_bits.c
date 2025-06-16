@@ -2,10 +2,11 @@
 #include "main.h"
 
 /**
- * set_bit -  a function that sets the value of a bit to 1 at a given index
+ *  flip_bits -a function that returns the number of bits you would need
+ *  to flip to get from one number to another.
  * @n: An input unsigned long int
- * @index: An input unsigned long int
- * Return:  length of a string.
+ * @m: An input unsigned long int
+ * Return:  number of bits you need to flip to get from one number to another
  */
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
