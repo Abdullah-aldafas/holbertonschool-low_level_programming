@@ -5,10 +5,10 @@
 #include <sys/stat.h>
 
 /**
- * main - Copies the content of a file to another file
- * @argc: Number of arguments
- * @argv: Argument values
- * Return: 0 on success, exits with error codes on failure
+ * main - Copies content from file_from to file_to
+ * @argc: number of arguments
+ * @argv: argument values
+ * Return: 0 on success, exits with relevant error code on failure
  */
 int main(int argc, char *argv[])
 {
@@ -29,15 +29,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	r = read(fd_from, buffer, 1024);
-	if (r == -1)
-	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-		close(fd_from);
-		exit(98);
-	}
-
-	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fd_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
@@ -45,7 +37,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	while (r > 0)
+	while ((r = read(fd_from, buffer, 1024)) > 0)
 	{
 		w = write(fd_to, buffer, r);
 		if (w != r)
@@ -55,14 +47,14 @@ int main(int argc, char *argv[])
 			close(fd_to);
 			exit(99);
 		}
-		r = read(fd_from, buffer, 1024);
-		if (r == -1)
-		{
-			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-			close(fd_from);
-			close(fd_to);
-			exit(98);
-		}
+	}
+
+	if (r == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		close(fd_from);
+		close(fd_to);
+		exit(98);
 	}
 
 	if (close(fd_from) == -1)
