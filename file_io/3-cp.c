@@ -4,18 +4,20 @@
 #include <fcntl.h>
 #include <unistd.h>
 /**
+ * copy_file - Copies the content of one file to another.
+ * @src: Source file path.
+ * @dest: Destination file path.
+ */
+
+void copy_file(const char *src, const char *dest);
+
+/**
   * main - Entry point
   * @argc: The argument count
   * @argv: The argument vector
   *
   * Return: ...
   */
-
-void copy_file(const char *src, const char *dest);
-
-
-void copy_file(const char *src, const char *dest);
-
 int main(int argc, char **argv)
 {
 	if (argc != 3)
@@ -28,13 +30,7 @@ int main(int argc, char **argv)
 	exit(0);
 }
 
-/**
-  * copy_file - ...
-  * @src: ...
-  * @dest: ...
-  *
-  * Return: ...
-  */
+
 void copy_file(const char *src, const char *dest)
 {
 	int ofd, tfd, readed;
