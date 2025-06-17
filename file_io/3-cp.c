@@ -30,6 +30,11 @@ int main(int argc, char **argv)
 	exit(0);
 }
 
+/**
+ * copy_file - Copies the content of one file to another.
+ * @src: Source file path.
+ * @dest: Destination file path.
+ */
 
 void copy_file(const char *src, const char *dest)
 {
