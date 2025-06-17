@@ -2,17 +2,18 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <sys/stat.h>
 
 /**
- * main - copies the content of one file to another
- * @argc: argument count
- * @argv: argument vector
- *
- * Return: 0 on success, exit codes on failure
+ * main - Copies the content of a file to another file
+ * @argc: Number of arguments
+ * @argv: Argument values
+ * Return: 0 on success, exits with error codes on failure
  */
 int main(int argc, char *argv[])
 {
-	int fd_from, fd_to, r, w;
+	int fd_from, fd_to;
+	ssize_t r, w;
 	char buffer[1024];
 
 	if (argc != 3)
@@ -28,6 +29,14 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
+	r = read(fd_from, buffer, 1024);
+	if (r == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		close(fd_from);
+		exit(98);
+	}
+
 	fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
@@ -36,7 +45,7 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	while ((r = read(fd_from, buffer, 1024)) > 0)
+	while (r > 0)
 	{
 		w = write(fd_to, buffer, r);
 		if (w != r)
@@ -46,14 +55,14 @@ int main(int argc, char *argv[])
 			close(fd_to);
 			exit(99);
 		}
-	}
-
-	if (r == -1)
-	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-		close(fd_from);
-		close(fd_to);
-		exit(98);
+		r = read(fd_from, buffer, 1024);
+		if (r == -1)
+		{
+			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+			close(fd_from);
+			close(fd_to);
+			exit(98);
+		}
 	}
 
 	if (close(fd_from) == -1)
@@ -61,12 +70,11 @@ int main(int argc, char *argv[])
 		dprintf(2, "Error: Can't close fd %d\n", fd_from);
 		exit(100);
 	}
-
 	if (close(fd_to) == -1)
 	{
 		dprintf(2, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
 
-	return 0;
+	return (0);
 }
